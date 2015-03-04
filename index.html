@@ -105,12 +105,22 @@ res:
  -|-|-|-|-
     **name**   |string|required   ||名字
      **gender**   |string|required   |male,female|性别
-      **tel_number**   |string|required   ||手机号
+      **phone_number**   |string|required   ||手机号
        **open_id**   |string|optional   ||第三方id号
  res:
 ```json
 {
-    "id":1,//分配的用户id号
+    "id": 31,
+    "name": null,
+    "gender": null,
+    "phoneNumber": "13800138000",
+    "phoneNumberVerified": false,
+    "identityCardNumber": null,
+    "driverLicenseNumber": null,
+    "weChatOpenId": "12345678901010",
+    "lastOrderPhoneNumber": null,
+    "lastOrderCustomerName": null,
+    "lastOrderCarId": null
 }
 ```
 
