@@ -639,6 +639,7 @@ res:
 }
 ```
 ##POST orders
+创建订单
   form_parameter |type|level  |  enum| description
  -|-|-|-|-
  **data**   |json|required   ||请求参数,值为json串,见req
@@ -646,74 +647,66 @@ res:
 req:
 ```json
 {
-    "order_type":"care",
-    "order_name":"常规保养",
-    "car_id":1555,
-    "keeper_id":123,
-    "pick_location":"曼陀山庄20号",
-    "phone_number":"1501011335",
-    "contact_name":"小龙女",
-    "paid":false,
-    "order_services":[
+    "pick_up_address": "测试",
+    "car_service_type": "Maintenance",
+    "car_id": 19,
+    "car_number": "黑HJ9899",
+    "car_model_name": "本田飞度 2014款 3.0L EXLN",
+    "car_model_logo": "12",
+    "customer_name": "测试",
+    "customer_phone_number": "15001206500",
+    "description": "",
+    "paid": false,
+    "items": [
         {
-            "type":"保养",
-            "name":"机滤通用",
-            "unit":"升",
-            "unit_count":1,
-            "price":123.00,
+            "name": "黄壳（推荐）",
+            "service_price": 0,
+            "product_price": 40,
+            "product_tax": 0,
+            "quantity": 6,
+            "product_id": 10
         }
     ],
-    "comment":"早点来"
+    "discription": ""
 }
 
 ```
 res:
 ```json
 {
-   "order": {
-        "id":1,
-        "name":"常规保养",
-        "status":"初检中",
-        "keeper_id":123,
-        "keeper_name":"张师傅",
-        "place_time":"2011-08-21T18:02:52.249Z", //  下单时间
-        "start_time":"2011-08-21T18:02:52.249Z",  // 接单时间
-        "order_services":[
-            {
-                "id":12,
-                "type":"保养",
-                "name":"机滤通用",
-                "unit":"升",
-                "unit_count":1,
-                "price":123.00,
-            }
-        ],
-        "service_flow":[
-            {
-                "id" : 1,
-                "name":"接车",
-                "status":"已完成",
-                "complete_time":"2011-08-21T18:02:52.249Z",
-                "location":"中关村南大街",
-                "imgs":[
-                "http://www.baidu.com/a.png",
-                "http://www.baidu.com/b.png",
-                ]
-            },
-            {
-                "id" : 2,
-                "name":"保养",
-                "status":"未完成",
-            }
-        ],
-        "client_feedback":
+    "id": 79,
+    "number": "BY20150304161015783",
+    "create_time": 1425456615789,
+    "last_modified": 1425456615789,
+    "pickup_address": "测试",
+    "car_service_type": "Maintenance",
+    "car_user_id": 31,
+    "car_id": 167,
+    "car_number": "京HU9999",
+    "car_model_id": 209,
+    "car_model_name": "宝马7系 2004款 760Li",
+    "customer_name": "测试",
+    "customer_phone_number": "13800138000",
+    "status": "Created",
+    "description": "",
+    "paid": false,
+    "paid_sum": 0,
+    "pay_number": null,
+    "items": [
         {
-            "comment":"非常不错,下次再来!",
-            "keeper_stars":4,
-            "order_stars":5,
+            "id": 130,
+            "create_time": 1425456615792,
+            "last_modified": 1425456615792,
+            "name": "金美孚",
+            "description": "金美孚",
+            "service_price": 0,
+            "product_price": 80,
+            "product_tax": 0,
+            "quantity": 8,
+            "order_id": 79,
+            "product_id": 6
         }
-    
-    }
+    ]
 }
 ```
  
