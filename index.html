@@ -74,7 +74,7 @@ http://192.168.1.1:8000/open_id?src=alipay&code=1234455
 
 ```json
 {
-"open_id":"12345"
+    "open_id":"12345"
 }
 ```
 
@@ -110,22 +110,14 @@ res:
  -|-|-|-|-
     **name**   |string|required   ||名字
      **gender**   |string|required   |male,female|性别
-      **phone_number**   |string|required   ||手机号
+      **tel_number**   |string|required   ||手机号
        **open_id**   |string|optional   ||第三方id号
  res:
 ```json
 {
     "id": 31,
-    "name": null,
-    "gender": null,
-    "phoneNumber": "13800138000",
-    "phoneNumberVerified": false,
-    "identityCardNumber": null,
-    "driverLicenseNumber": null,
-    "weChatOpenId": "12345678901010",
-    "lastOrderPhoneNumber": null,
-    "lastOrderCustomerName": null,
-    "lastOrderCarId": null
+    "tel_number": "13800138000",
+    "open_id": "12345678901010"
 }
 ```
 
@@ -137,7 +129,9 @@ res:
  res:
  ```json
 {
-    "id":1,//分配的用户id号
+    "id": 31,
+    "tel_number": "13800138000",
+    "open_id": "12345678901010"
 }
 ```
 
@@ -853,6 +847,7 @@ res:
 form_parameter |type|level  |  enum| description
  -|-|-|-|-
  **tel_code**   |string|required   ||手机验证码
+ tel_number|string|required||手机号
 res:
 ```json
 {
