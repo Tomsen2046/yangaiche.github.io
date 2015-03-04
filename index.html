@@ -61,14 +61,15 @@ error
  20001|IDs is null|IDs参数为空
 
 #API
-##GET auth_code
+##GET open_id
 
 获得第三方渠道授权码
 
   parameter |type|level  |  enum| description
  -|-|-|-|-
-    **src**   |string|required   |ali,werxin|
-http://192.168.1.1:8000/auto_code?src=ali
+    **src**   |string|required   |alipay,weixin,guoqing|
+    code|string|required||
+http://192.168.1.1:8000/open_id?src=alipay&code=1234455
  
 
 
